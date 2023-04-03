@@ -44,4 +44,5 @@ public class Operation {
                 ", minute=" + minute +
                 '}';
     }
+
 }

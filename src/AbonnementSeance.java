@@ -19,4 +19,8 @@ public class AbonnementSeance extends Abonnement{
                 "nombreSeance=" + nombreSeance +
                 '}';
     }
+    /** méthode chargement de l'abonnement en fonction du nb de séances rentré */
+    public void chargerAbonnementSeance(int nbSeance){
+        this.nombreSeance= nbSeance;
+    }
 }

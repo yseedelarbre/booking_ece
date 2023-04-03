@@ -30,8 +30,12 @@ public class AbonnementDuree extends Abonnement {
                 ", active=" + active +
                 '}';
     }
-    /**METHODES*/
-    /*public boolean valider(){
-        Operation operation;
-    }*/
+
+    /** méthode de chargement de l'abonnement en fonction du la date début
+     * et de date de fin */
+    public void chargerAbonnementDuree(Calendar debut, Calendar fin){
+        this.date_debut= debut;
+        this.date_fin= fin;
+        this.active = true;
+    }
 }
