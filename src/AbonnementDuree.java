@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class AbonnementDuree extends Abonnement {
     /**ATTRIBUTS*/
@@ -8,7 +9,7 @@ public class AbonnementDuree extends Abonnement {
     private boolean active;
 
     /**CONSTRUCTEURS*/
-    public AbonnementDuree(int numero, String proprietaire, Calendar dateAchat, ArrayList<Operation> listeOperation, Calendar date_debut, Calendar date_fin, boolean active) {
+    public AbonnementDuree(int numero, String proprietaire, Date dateAchat, ArrayList<Operation> listeOperation, Calendar date_debut, Calendar date_fin, boolean active) {
         super(numero, proprietaire, dateAchat, listeOperation);
         this.date_debut = date_debut;
         this.date_fin = date_fin;
