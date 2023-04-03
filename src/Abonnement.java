@@ -26,18 +26,22 @@ public class Abonnement {
     public Calendar getDateAchat() {return dateAchat;}
     public void setDateAchat(Calendar dateAchat) {this.dateAchat = dateAchat;}
     public ArrayList<Operation> getListeOperation() {return ListeOperation;}
-    public void ajouterOperation(Operation nouvelle) { {
-      this.ListeOperation.add(nouvelle);
-    }}
+    public void setListeOperation(ArrayList<Operation> listeOperation) {ListeOperation = listeOperation;}
 
+  /**AFFICHAGE*/
     @Override
     public String toString() {
         return "Abonnement{" +
                 "numero=" + numero +
                 ", proprietaire='" + proprietaire + '\'' +
-                ", dateAchat=" + dateAchat +
+                ", jour de l'achat =" + dateAchat.get(Calendar.DAY_OF_MONTH) + /*************************/
                 ", ListeOperation=" + ListeOperation +
                 '}';
+    }
+    /**METHODES*/
+    /**méthode permettant d'ajouter une operation a l'arrayliste*/
+    public void ajouterOperation(Operation nouvelle) {
+    this.ListeOperation.add(nouvelle);
     }
     /** Méthode affichant les nombreOperations dernières opérations */
     public void historique(int nombreOperations){
@@ -49,6 +53,6 @@ public class Abonnement {
         System.out.println("Abonnement n° : " + i + getListeOperation().get(i).toString());
       }
     }
-}
+  }
 
 

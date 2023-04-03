@@ -23,4 +23,19 @@ public class AbonnementSeance extends Abonnement{
     public void chargerAbonnementSeance(int nbSeance){
         this.nombreSeance= nbSeance;
     }
+    /**méthode qui valide une opération et qui l'ajoute à l'historique si elle est validee*/
+    public boolean valider(Abonnement historique, Calendar seance, int heure, int minute){
+        Operation op = new Operation();
+        if(getNombreSeance()>0 ){ /**Si l'abonnement contient encore des seances*/
+            op.setDate(seance);
+            op.setHeure(heure);
+            op.setMinute(minute);
+            historique.ajouterOperation(op); /**Ajoute l'abonnement à l'historique*/
+            int a = getNombreSeance();
+            setNombreSeance(a-1); /**on retire une seance à l'abonnement*/
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -21,21 +21,37 @@ public class AbonnementDuree extends Abonnement {
     public void setDate_fin(Calendar date_fin) {this.date_fin = date_fin;}
     public boolean isActive() {return active;}
     public void setActive(boolean active) {this.active = active;}
-
+    /**AFFICHAGE*/
     @Override
     public String toString() {
         return "AbonnementDuree{" +
-                "date_debut=" + date_debut +
-                ", date_fin=" + date_fin +
+                ", jour du début de l'abonnement =" + getDate_debut().get(Calendar.DAY_OF_MONTH) +
+                ", mois du début de l'abonnement =\" " + getDate_debut().get(Calendar.MONTH + 1) + //on rajoute un car les mois commencent à 0 donc il faut décaler d'un pour avoir le bon mois
+                ", année du début de l'abonnement =\" " + getDate_debut().get(Calendar.YEAR) +
+                ", jour du fin de l'abonnement =\" " + getDate_debut().get(Calendar.DAY_OF_MONTH) +
+                ", mois du fin de l'abonnement =\" " + getDate_debut().get(Calendar.MONTH + 1) + //on rajoute un car les mois commencent à 0 donc il faut décaler d'un pour avoir le bon mois
+                ", année du fin de l'abonnement =\" " + getDate_debut().get(Calendar.YEAR) +
                 ", active=" + active +
                 '}';
     }
-
-    /** méthode de chargement de l'abonnement en fonction du la date début
-     * et de date de fin */
+    /**METHODE*/
+    /** méthode de chargement de l'abonnement en fonction du la date début et de date de fin */
     public void chargerAbonnementDuree(Calendar debut, Calendar fin){
         this.date_debut= debut;
         this.date_fin= fin;
         this.active = true;
+    }
+    /**méthode qui valide une opération et qui l'ajoute à l'historique si elle est validee*/
+    public boolean valider(Abonnement historique, Calendar seance, int heure, int minute){
+        Operation op = new Operation();
+        if(seance.before(getDate_fin()) && seance.after(getDate_debut()) ){/**on verifie que la date de la seance soit comprises dans la date de l'abonnement*/
+            op.setDate(seance);
+            op.setHeure(heure);
+            op.setMinute(minute);
+            historique.ajouterOperation(op);/**on ajoute cette operation a l'historique*/
+            return true;
+        }else{
+            return false;
+        }
     }
 }
