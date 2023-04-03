@@ -3,7 +3,7 @@ import java.util.Calendar;
 public class Operation {
 
     /** ATTRIBUTS */
-    private Calendar date; /**permet d'avoir les dates avec jour, mois, année*/
+    private Calendar date;
     private int heure ;
     private int minute;
 
@@ -25,7 +25,6 @@ public class Operation {
         this.date = date;
     }
 
-    /**AFFICHAGE*/
     @Override
     public String toString() {
         return "Operation{" +

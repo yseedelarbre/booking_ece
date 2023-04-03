@@ -5,7 +5,8 @@ public class AbonnementSeance extends Abonnement{
     /**ATTRIBUTS*/
     int nombreSeance;
     /**CONSTRUCTEURS*/
-    public AbonnementSeance(int numero, String proprietaire, Calendar dateAchat, ArrayList<Operation> listeOperation, int nombreSeance) {
+
+    public AbonnementSeance(int numero, String proprietaire, Date dateAchat, ArrayList<Operation> listeOperation, int nombreSeance) {
         super(numero, proprietaire, dateAchat, listeOperation);
         this.nombreSeance = nombreSeance;
     }
