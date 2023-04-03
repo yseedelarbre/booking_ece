@@ -38,4 +38,17 @@ public class AbonnementDuree extends Abonnement {
         this.date_fin= fin;
         this.active = true;
     }
+
+    public boolean valider(Calendar seance, int heure, int minute){
+        Operation op = new Operation();
+        if(seance.before(getDate_fin()) && seance.after(getDate_debut()) ){//superieur a mois debut mais inferieur à mois fin
+            op.setDate(seance);
+            op.setHeure(heure);
+            op.setMinute(minute);
+            ajouterOperation(op);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -23,4 +23,18 @@ public class AbonnementSeance extends Abonnement{
     public void chargerAbonnementSeance(int nbSeance){
         this.nombreSeance= nbSeance;
     }
+
+    public boolean valider(Calendar seance, int heure, int minute){
+        Operation op = new Operation();
+        if(getNombreSeance()>0){//superieur a mois debut mais inferieur à mois fin
+            op.setDate(seance);
+            op.setHeure(heure);
+            op.setMinute(minute);
+            ajouterOperation(op);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

@@ -2,23 +2,23 @@ import java.util.Calendar;
 
 public class Operation {
 
-    /** ATTRIBUTS */
+    /**ATTRIBUTS*/
     private Calendar date;
     private int heure ;
     private int minute;
 
-    public int getHeure() {
-        return heure;
-    }
 
-    /** CONSTRUCTEURS */
+    /**CONSTRUCTEURS*/
+    public Operation() {
+    }
     public Operation(Calendar date, int heure, int minute) {
         this.date = date;
         this.heure = heure;
         this.minute = minute;
     }
 
-    /** GETTERS ET SETTERS */
+    /**GETTER ET SETTER*/
+    public int getHeure() {return heure;}
     public void setHeure(int heure) {
         this.heure = heure;
     }
@@ -31,7 +31,6 @@ public class Operation {
     public Calendar getDate() {
         return date;
     }
-
     public void setDate(Calendar date) {
         this.date = date;
     }
