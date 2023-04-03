@@ -25,7 +25,6 @@ public class Operation {
     public int getMinute() {
         return minute;
     }
-
     public void setMinute(int minute) {
         this.minute = minute;
     }
