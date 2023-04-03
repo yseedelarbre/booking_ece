@@ -26,7 +26,9 @@ public class Abonnement {
     public Calendar getDateAchat() {return dateAchat;}
     public void setDateAchat(Calendar dateAchat) {this.dateAchat = dateAchat;}
     public ArrayList<Operation> getListeOperation() {return ListeOperation;}
-    public void setListeOperation(ArrayList<Operation> listeOperation) {ListeOperation = listeOperation;}
+    public void ajouterOperation(Operation nouvelle) { {
+      this.ListeOperation.add(nouvelle);
+    }}
 
     @Override
     public String toString() {
