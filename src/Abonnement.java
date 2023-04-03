@@ -39,6 +39,16 @@ public class Abonnement {
                 ", ListeOperation=" + ListeOperation +
                 '}';
     }
+    /** Méthode affichant les nombreOperations dernières opérations */
+    public void historique(int nombreOperations){
+      /** parcours de l'ArrayList Operation à l'envers
+       * afin de récuperer les dernières nombreOperations
+       * opérations
+       */
+      for(int i= getListeOperation().size() ;i<(getListeOperation().size()-nombreOperations);i++){
+        System.out.println("Abonnement n° : " + i + getListeOperation().get(i).toString());
+      }
+    }
 }
 
 

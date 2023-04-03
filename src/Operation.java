@@ -2,7 +2,7 @@ import java.util.Calendar;
 
 public class Operation {
 
-    /** attributs */
+    /** ATTRIBUTS */
     private Calendar date;
     private int heure ;
     private int minute;
@@ -11,14 +11,14 @@ public class Operation {
         return heure;
     }
 
-    /** constructeur */
+    /** CONSTRUCTEURS */
     public Operation(Calendar date, int heure, int minute) {
         this.date = date;
         this.heure = heure;
         this.minute = minute;
     }
 
-/** getter et setter */
+    /** GETTERS ET SETTERS */
     public void setHeure(int heure) {
         this.heure = heure;
     }
