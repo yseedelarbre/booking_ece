@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+        Abonnement historique = new Abonnement();
         ArrayList<Operation> historiqueOperation = new ArrayList<>();
         System.out.println("Bonjour et bienvenue sur la plateforme d'abonnement");
         System.out.println("***************************************************");
@@ -89,7 +90,7 @@ public class Main {
            }
            /** récuperation et conversion en formate Calendar*/
            Calendar dateSeance = new GregorianCalendar(annee,mois-1,jour);
-           abonnement.valider(dateSeance,heure,minute);
+           abonnement.valider(abonnement,dateSeance,heure,minute);
 
        }
        else if(r==2)
